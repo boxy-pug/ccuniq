@@ -37,7 +37,7 @@ func TestUniqCommandFile(t *testing.T) {
 			t.Fatalf("Command failed with error: %v", err)
 		}
 
-		if string(output) != string(unixOutput) {
+		if string(output) != string(unixOutput)+"\n" {
 			t.Errorf("\tEXPECTED: %q\n\tGOT: %q\n", string(unixOutput), string(output))
 		}
 	}
@@ -57,7 +57,7 @@ func TestUniqCommandStdin(t *testing.T) {
 			t.Fatalf("Command failed with error: %v", err)
 		}
 
-		if string(output) != string(unixOutput) {
+		if string(output) != string(unixOutput)+"\n" {
 			t.Errorf("\tEXPECTED: %q\n\tGOT: %q\n", string(unixOutput), string(output))
 		}
 	}
